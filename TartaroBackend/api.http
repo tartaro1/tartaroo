@@ -1,0 +1,192 @@
+###GET
+GET http://localhost:3000/products
+###GET
+GET http://localhost:3000/products/4
+###Añadir producto
+POST http://localhost:9200/products
+Content-Type: application/json
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJDb3JyZW8iOiJlQGdtYWlsLmNvbSIsIlJvbCI6MiwiaWF0IjoxNzE5NjMyMDQ4LCJleHAiOjE3MTk2MzQ0NDh9.CQmAFBNhyxmwtrnMFKka0zbExevtQ7ArMLkyZKZdVE4
+
+{
+    "nombre": "popo",
+    "id_categoria": 3,
+    "marca": "Éad",
+    "id_proveedor": 3,
+    "descripcion": "Jedchos",
+    "precio": 300,
+    "calificacion": 3,
+    "imagen": ""
+}
+###eliminar
+DELETE http://localhost:9200/products/36
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJDb3JyZW8iOiJlQGdtYWlsLmNvbSIsIlJvbCI6MiwiaWF0IjoxNzE5NjMyMDQ4LCJleHAiOjE3MTk2MzQ0NDh9.CQmAFBNhyxmwtrnMFKka0zbExevtQ7ArMLkyZKZdVE4
+
+###
+GET  http://localhost:9200/detailsOrders
+
+###
+GET http://localhost:9200/detailsOrders/ProveedorA
+
+###
+PATCH http://localhost:9200/products/39
+Content-Type: application/json
+
+
+{
+    "nombre": "p",
+    "id_categoria": 3,
+    "marca": "Éad",
+    "id_proveedor": 3,
+    "descripcion": "Jedchos",
+    "precio": 300,
+    "calificacion": 3,
+    "imagen": ""
+}
+
+###Pat
+PATCH http://localhost:9200/products/39
+Content-Type: application/json
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJDb3JyZW8iOiJlQGdtYWlsLmNvbSIsIlJvbCI6MiwiaWF0IjoxNzE5NjMyMDQ4LCJleHAiOjE3MTk2MzQ0NDh9.CQmAFBNhyxmwtrnMFKka0zbExevtQ7ArMLkyZKZdVE4
+
+{
+    
+    "NombreProducto": "Antonio",
+    "ID_Categoria": 1,
+    "Marca": "1",
+    "ID_Proveedor": 1,
+    "Descripcion": "Adasjhdhajsdjkk",
+    "PrecioVenta": 1,
+    "Calificacion": 1,
+    "Disponibilidad": 1,
+    "imagen": "s"
+}
+###Get USER
+GET http://localhost:3000/users
+### GET ID
+GET http://localhost:3000/users/25
+### POST USER
+POST http://localhost:9200/users
+Content-Type: application/json
+
+{
+    "Nombre": "Ese",
+    "Celular": "258",
+    "Cedula": 687,
+    "Direccion": "cheesesticks",
+    "Correo": "e@gmail.com",
+    "Contrasena": "1",
+    "ID_Rol": 2
+}
+### DELETE USER
+DELETE http://localhost:9200/users/81
+### PATCH USER 
+PATCH  http://localhost:3000/users/1
+Content-Type: application/json
+
+{
+    "Nombre": "Klimber",
+    "Estado": "Desactivado" 
+}
+
+### GET DEALERS 
+GET http://localhost:3000/dealers
+### GET DEALER ID
+GET http://localhost:3000/dealers/2
+### POST DEALER
+POST http://localhost:9200/dealers
+Content-Type: application/json
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJDb3JyZW8iOiJlQGdtYWlsLmNvbSIsIlJvbCI6MiwiaWF0IjoxNzE5NjMyMDQ4LCJleHAiOjE3MTk2MzQ0NDh9.CQmAFBNhyxmwtrnMFKka0zbExevtQ7ArMLkyZKZdVE4
+
+{
+    "Nombre": "Rigoberto",
+    "Celular": "31728281",
+    "Cedula": 1197787,
+    "Direccion": "cheesesticks loaiza",
+    "Correo": "xf9ey@gmail.com",
+    "Contrasena": "esd"
+}
+###DELETE DEALER
+DELETE http://localhost:3000/dealers/3
+
+### PATCH DEALER
+PATCH  http://localhost:9200/dealers/86
+Content-Type: application/json
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJDb3JyZW8iOiJlQGdtYWlsLmNvbSIsIlJvbCI6MiwiaWF0IjoxNzE5NjMyMDQ4LCJleHAiOjE3MTk2MzQ0NDh9.CQmAFBNhyxmwtrnMFKka0zbExevtQ7ArMLkyZKZdVE4
+
+{
+    "Nombre": "Rigrto",
+    "Celular": "31728281",
+    "Cedula": 1197787,
+    "Direccion": "cheesesticks loaiza",
+    "Correo": "xf9ey@gmail.com",
+    "Contrasena": "esd",
+    "ID_Rol": 1,
+    "Estado": ""
+}
+
+### LOGIN USER
+GET http://localhost:3000/users/login
+Content-Type: application/json 
+
+{
+    "Nombre": "Klimber",
+    "Contrasena": "esnigderjj123ysid"
+}
+
+###ORDERS
+GET http://localhost:9200/dashboard/orders
+###ORDERS BY ID
+GET http://localhost:3000/dashboard/orders/1
+###UPDATE ORDER
+PATCH http://localhost:3000/orders/1 
+Content-Type: application/json 
+
+{
+    "Direccion": "Klimber",
+    "Cliente": 4,
+    "PrecioVenta": 30000,
+    "ID_Rol": 1
+}
+###DELETE ORDER
+DELETE http://localhost:3000/orders/1 
+
+####
+GET http://localhost:9200/backup
+
+###
+GET http://localhost:9200/dealers?email=dddaaa 
+
+
+###
+
+POST http://localhost:9200/users/login
+Content-Type: application/json 
+
+{
+    "Correo": "e@gmail.com",
+    "Contrasena": "1"
+}
+
+###
+POST http://localhost:9200/orders
+content-type: application/json
+
+{
+    "EstadoPedido": "Pendiente",
+    "Direccion": "Asturias",
+    "cliente": 1,
+    "PrecioVenta": "30.00",
+    "ID_Repartidor": 22
+}
+
+###
+POST http://localhost:9200/detailsOrders
+Content-Type: application/json
+
+{
+    "ID_Pedido": 1,
+    "ID_Producto": 1,
+    "cantidad": 30,
+    "PrecioVenta": 3,
+    "Descuento": 1
+}
